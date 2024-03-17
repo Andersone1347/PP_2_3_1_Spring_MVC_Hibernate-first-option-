@@ -1,10 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
+
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>AllCar</title>
 </head>
 <body>
+<style>
+    table, th, td {
+        margin: auto;
+        /* выравнивание текста внутри ячеек */
+        text-align: center;
+        /* делаем границы красивыми */
+        border-collapse: collapse;
+        border:2px solid black;
+        font-size: 30px;
+    }
+</style>
+<table style="width:100%">
+    <thead>
+    <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">LastName</th>
 
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="car : ${car_list}">
+        <td th:text="${car.getId()}"/>
+        <td th:text="${car.getName()}"/>
+        <td th:text="${car.getLastname()}"/>
+
+
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>
