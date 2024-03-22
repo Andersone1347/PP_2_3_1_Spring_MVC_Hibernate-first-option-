@@ -1,12 +1,33 @@
 package web.service;
 
-import org.springframework.stereotype.Component;
 import web.model.Car;
-
 import java.util.List;
-@Component
-public interface CarService {
-    List<Car> printWelcomeCar(int count);
 
-    List<Car> getCars();
+public interface CarService {
+    List<Car> getCarsByCount(int count);
+
 }
+
+//class CarController
+//
+//- отступи 1 строку между импортами и описанием класса, сежду полями и между методами
+//
+//interface CarService
+//
+//----- зачем тут @Component? Эта аннотация указывает спрингу и которого класса надо сделать бин, а бин это объект под управлением спринга. (Создай мне объект из интерфейса)...
+//
+//- имя метода говорит о том что он делает - что делает метод printWelcomeCar() ? Назови метод правильно getCarsByCount(count)
+//
+//- удали getCars()
+//
+//class CarServiceImpl
+//
+//(сейчас твоя реализация при каждом запросе создает новый спиок)
+//
+//- создай приватное поле список машин, инициализируй это поле при создании экземпляра класса (в конструкторе)
+//
+//- пусть getCarsByCount() обращается к этому списку
+//
+//- где оверайд над публичными методами?
+//
+//- почему поле публичное?
